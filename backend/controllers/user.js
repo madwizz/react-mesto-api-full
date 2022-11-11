@@ -6,7 +6,7 @@ const MatchedError = require('../utils/classErrors/MatchedError');
 const NotFoundError = require('../utils/classErrors/NotFoundError');
 const { MONGO_DB_CODE } = require('../utils/errors');
 
-const { JWT } = require('../utils/JWT');
+const { getJWT } = require('../utils/getJWT');
 
 module.exports.getUsers = async (req, res, next) => {
   try {
@@ -60,7 +60,7 @@ module.exports.login = async (req, res, next) => {
   try {
     const { email, password } = req.body;
     const user = await User.findUser(email, password);
-    const key = JWT();
+    const key = getJWT();
     const token = jwt.sign({ _id: user._id }, key, { expiresIn: '7d' });
     res.send({ token });
   } catch (err) {
