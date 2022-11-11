@@ -1,0 +1,9 @@
+.popup__error-message-container {
+  width: 358px;
+  height: 30px;
+}
+@media screen and (max-width: 469px) and (min-width: 320px) {
+  .popup__error-message-container {
+    width: 238px;
+  }
+}
