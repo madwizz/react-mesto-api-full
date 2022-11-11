@@ -11,6 +11,7 @@ const { login, createUser } = require('./controllers/user');
 const NotFoundError = require('./utils/classErrors/NotFoundError');
 const errorHandler = require('./utils/errorHandler');
 const { validateLogin, validateRegister } = require('./utils/validators/userValidator');
+const { requestLogger, errorLogger } = require('./middlewares/logger');
 
 const { PORT = 3000, MONGO_URL = 'mongodb://localhost:27017/mestodb' } = process.env;
 
@@ -18,6 +19,7 @@ const app = express();
 
 app.use(bodyParser.json());
 mestodb.connect(MONGO_URL);
+app.use(requestLogger);
 
 app.post('/signin', validateLogin, login);
 app.post('/signup', validateRegister, createUser);
@@ -28,6 +30,7 @@ app.use('/cards', cardRoutes);
 app.use('*', () => {
   throw new NotFoundError('URL is not found. Check URL and request method');
 });
+app.use(errorLogger);
 app.use(errors());
 app.use(errorHandler);
 
