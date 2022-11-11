@@ -12,6 +12,7 @@ const NotFoundError = require('./utils/classErrors/NotFoundError');
 const errorHandler = require('./utils/errorHandler');
 const { validateLogin, validateRegister } = require('./utils/validators/userValidator');
 const { requestLogger, errorLogger } = require('./middlewares/logger');
+const cors = require('./utils/cors/cors');
 
 const { PORT = 3000, MONGO_URL = 'mongodb://localhost:27017/mestodb' } = process.env;
 
@@ -20,6 +21,12 @@ const app = express();
 app.use(bodyParser.json());
 mestodb.connect(MONGO_URL);
 app.use(requestLogger);
+app.use(cors);
+app.get('/crash-test', () => {
+  setTimeout(() => {
+    throw new Error('Server is going to crash');
+  }, 0);
+});
 
 app.post('/signin', validateLogin, login);
 app.post('/signup', validateRegister, createUser);
