@@ -1,0 +1,15 @@
+.popup__tooltip {
+  position: relative;
+  margin: auto;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  width: 100%;
+  max-width: 430px;
+}
+@media screen and (max-width: 570px) {
+  .popup__tooltip {
+    padding: 36px 0 0;
+    max-width: 475px;
+  }
+}

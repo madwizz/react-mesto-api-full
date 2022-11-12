@@ -1,0 +1,8 @@
+.popup__title_add {
+  margin: 34px 200px 54px 0;
+}
+@media screen and (max-width: 469px) and (min-width: 320px) {
+  .popup__title_add {
+    margin: 25px 115px 75px 0;
+  }
+}
