@@ -1,0 +1,11 @@
+.popup__close-button_edit {
+  top: -40px;
+  right: -40px;
+}
+
+@media screen and (max-width: 468px) and (min-width: 320px) {
+  .popup__close-button_edit {
+    top: -35px;
+    right: -10px;
+  }
+}

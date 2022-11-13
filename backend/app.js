@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 const mestodb = require('mongoose');
 const bodyParser = require('body-parser');
@@ -22,6 +23,11 @@ app.use(bodyParser.json());
 mestodb.connect(MONGO_URL);
 app.use(requestLogger);
 app.use(cors);
+app.get('/crash-test', () => {
+  setTimeout(() => {
+    throw new Error('Server is going to crash');
+  }, 0);
+});
 
 app.post('/signin', validateLogin, login);
 app.post('/signup', validateRegister, createUser);

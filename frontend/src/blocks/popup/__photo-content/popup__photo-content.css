@@ -1,0 +1,12 @@
+.popup__photo-content {
+  max-width: 816px;
+  margin: auto 90px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+@media screen and (max-width: 720px) and (min-width: 320px) {
+  .popup__photo-content {
+    margin: auto 40px;
+  }
+}
