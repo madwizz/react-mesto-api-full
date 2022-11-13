@@ -7,4 +7,4 @@ Front: madwizz.nomoredomains.icu
 
 Back: madwizz-backend.nomoredomains.icu
 
-IP: 130.193.52.141
+IP: 158.160.5.213
