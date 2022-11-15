@@ -92,9 +92,8 @@ class Api {
 }
 
 export const api = new Api({
-  host: "https://mesto.nomoreparties.co/v1/cohort-47",
+  host: "https://madwizz-backend.nomoredomains.icu",
   headers: {
-    authorization: "e64a8138-ccc5-4160-a623-3eaa2a1e9520",
     "content-type": "application/json",
   },
 });
