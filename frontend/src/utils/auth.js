@@ -1,4 +1,4 @@
-export const host = "https://auth.nomoreparties.co";
+export const host = "https://madwizz-backend.nomoredomains.icu";
 
 export const register = (email, password) => {
   return fetch(`${host}/signup`, {
