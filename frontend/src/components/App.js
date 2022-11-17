@@ -37,11 +37,11 @@ function App() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (!isLogged) {
+    if (isLogged) {
       Promise.all([api.getUserInfo(), api.getInitialCards()])
         .then(([userInfo, cards]) => {
           setCurrentUser(userInfo);
-          setCards(cards);
+          setCards(cards.reverse());
         })
         .catch((error) => console.log(error));
     }
@@ -173,11 +173,9 @@ function App() {
       auth
         .getContent(token)
         .then((res) => {
-          if (res) {
-            setIsLogged(true);
-            setUserEmail(res.data.email);
-            navigate("/*");
-          }
+          setUserEmail(res.email);
+          setIsLogged(true);
+          navigate("/*");
         })
         .catch((error) => {
           console.log(error);
