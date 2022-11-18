@@ -43,7 +43,7 @@ module.exports.createUser = async (req, res, next) => {
       name, about, avatar, email, password: hash,
     });
     res.send({
-      name, about, avatar, email,
+      message: 'User was successfully created',
     });
   } catch (err) {
     if (err.code === MONGO_DB_CODE) {

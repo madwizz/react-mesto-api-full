@@ -13,7 +13,7 @@ function ImagePopup({ card, onClose, isOpen }) {
         document.removeEventListener("keydown", handleEscClose);
       };
     }
-  }, [isOpen]);
+  }, [isOpen, onClose]);
 
   return (
     <section className={`popup popup_photo ${isOpen ? "popup_opened" : ""}`}>

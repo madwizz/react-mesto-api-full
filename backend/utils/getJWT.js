@@ -1,5 +1,3 @@
-require('dotenv').config();
-
 const { NODE_ENV, SECRET_JWT } = process.env;
 
 // eslint-disable-next-line func-names
