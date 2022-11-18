@@ -3,8 +3,8 @@
   
 Пожалуйста, прикрепите в это описание ссылку на сайт, размещенный на Яндекс.Облаке.
 
-Front: madwizz.nomoredomains.icu
+Front: https://madwizz.nomoredomains.icu
 
-Back: madwizz-backend.nomoredomains.icu
+Back: https://madwizz-backend.nomoredomains.icu
 
 IP: 158.160.5.213
