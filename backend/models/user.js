@@ -40,6 +40,7 @@ const userSchema = new mongoose.Schema({
   },
 });
 
+// eslint-disable-next-line func-names
 userSchema.statics.findUser = async function (email, password) {
   let user;
 
